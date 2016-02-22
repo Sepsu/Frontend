@@ -1,0 +1,24 @@
+.form-item {
+  display: flex;
+  flex-direction: column;
+	padding: .5em;
+  border-bottom: 1px #eee solid;
+
+  &.inline {
+    flex-direction: row;
+  }
+
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+  &.inline .form-item-content {
+    text-align: right
+  }
+  .form-item-label {
+    font-weight: 600;
+    flex: 1;
+  }
+
+}

@@ -1,0 +1,27 @@
+import React, { Component } from 'react';
+
+/* component styles */
+import { styles } from './styles.scss';
+
+export class Projects extends Component {
+  render() {
+    return (
+      <section className={`${styles}`}>
+        <div className="container">
+
+          <div className="row">
+            <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+              <h2>
+                Who's using Redux Easy Boilerplate
+              </h2>
+            </div>
+          </div>
+
+          <div className="row">
+          </div>
+
+        </div>
+      </section>
+    );
+  }
+}
