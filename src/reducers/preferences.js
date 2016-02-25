@@ -1,8 +1,11 @@
+const _ = require('lodash');
+
 const initialState = {
   lights: false,
   color: '#0ff',
   temp: 0,
-  connected: false
+  connected: false,
+  temps: [21, 24, 22, 19, 18, 16, 18, 20, 21, 19, 17, 18, 23, 25, 28, 25, 12, 25]
 };
 
 export function preferences(state = initialState, action) {
@@ -27,6 +30,11 @@ export function preferences(state = initialState, action) {
     return {
       ...state,
       color: action.color
+    };
+  case 'SET_TEMP':
+    return {
+      ...state,
+      temps: _.concat(state.temps, action.value)
     };
   default:
     return state;

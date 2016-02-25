@@ -8,7 +8,7 @@ import routes from './routes';
 
 import env from "./config";
 import io from "socket.io-client"
-import {setState} from 'actions/preferences';
+import {setState, setTemp} from 'actions/preferences';
 
 const socket = io(`${env.apiHost}:${env.apiPort}`);
 const history = useRouterHistory(createHashHistory)({ queryKey: false });
@@ -22,6 +22,10 @@ socket.on('connect', function() {
 socket.on('state', (state) => {
   console.log("received new state", state);
   store.dispatch(setState(state));
+});
+socket.on('temp', (state) => {
+  console.log("received new temp", state);
+  store.dispatch(setTemp(state));
 });
 
 ReactDOM.render(

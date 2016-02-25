@@ -11,6 +11,7 @@ import Slider from 'material-ui/lib/slider';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import ChartistGraph from 'react-chartist';
 
 /* actions */
 import * as actionCreators from 'actions/preferences';
@@ -28,7 +29,11 @@ const metaData = {
 };
 
 function mapStateToProps(state) {
-  return state.preferences;
+  return Object.assign({}, state.preferences, {
+    graph: {
+      series: [ state.preferences.temps ]
+    }
+  });
 }
 
 function mapDispatchToProps(dispatch) {
@@ -55,7 +60,10 @@ class Home extends Component {
         <DocumentMeta {...metaData} />
         <Tabs>
           <Tab label="Dashboard">
-            <FormItem label="Temperature" {...this.props}>{this.props.temp}&deg;c</FormItem>
+            <FormItem label="Temperature" {...this.props}>{_.last(this.props.temps)}&deg;C</FormItem>
+            <div className="chart-container">
+              <ChartistGraph data={this.props.graph} type="Line" />
+            </div>
           </Tab>
           <Tab label="Lights">
             <Toggle className="form-item" label="Lights" onToggle={this.toggleLights} toggled={this.props.lights} />
@@ -68,7 +76,9 @@ class Home extends Component {
           </Tab>
           <Tab label="Motion">
             motion low/med/hi<br />
-            liikekäppyrä
+            <div className="chart-container">
+              <ChartistGraph data={this.props.graph} type="Line" />
+            </div>
           </Tab>
         </Tabs>
       </section>

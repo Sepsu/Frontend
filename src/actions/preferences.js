@@ -18,7 +18,12 @@ export function setLights(val) {
     value: val
   };
 }
-
+export function setTemp(val) {
+  return {
+    type: 'SET_TEMP',
+    value: val
+  };
+}
 export function setColor(val) {
   return {
     type: 'SET_COLOR',
