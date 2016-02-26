@@ -1,9 +1,9 @@
 const _ = require('lodash');
+const MAX_TEMPS = 20;
 
 const initialState = {
   lights: false,
   color: '#0ff',
-  temp: 0,
   connected: false,
   temps: [21, 24, 22, 19, 18, 16, 18, 20, 21, 19, 17, 18, 23, 25, 28, 25, 12, 25]
 };
@@ -34,7 +34,7 @@ export function preferences(state = initialState, action) {
   case 'SET_TEMP':
     return {
       ...state,
-      temps: _.concat(state.temps, action.value)
+      temps: _.takeRight(_.concat(state.temps, action.value), MAX_TEMPS)
     };
   default:
     return state;
