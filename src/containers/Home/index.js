@@ -16,6 +16,8 @@ import ChartistGraph from 'react-chartist';
 /* actions */
 import * as actionCreators from 'actions/preferences';
 
+const SLIDER_DEBOUNCE = 300;
+
 const metaData = {
   title: 'eloSeed',
   description: 'Start you project easy and fast with modern tools',
@@ -42,11 +44,16 @@ function mapDispatchToProps(dispatch) {
 
 class Home extends Component {
 
+  constructor() {
+    super();
+    this.setBrightness = _.debounce(this.setBrightness, SLIDER_DEBOUNCE);
+    this.setColor = _.debounce(this.setColor, SLIDER_DEBOUNCE);
+  }
+
   toggleLights = (e) => {
     this.props.actions.setLights(!this.props.lights);
   };
   setBrightness = (e) => {
-    console.log("bri", this.refs.brightness);
     this.props.actions.setBrightness(this.refs.brightness.state.value);
   };
   setColor = (color) => {
@@ -54,7 +61,6 @@ class Home extends Component {
   };
 
   render() {
-    console.log("home render", this.props);
     return (
       <section>
         <DocumentMeta {...metaData} />
