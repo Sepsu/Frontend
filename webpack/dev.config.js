@@ -9,7 +9,7 @@ module.exports = {
     './src/index',
   ],
   output: {
-    publicPath: '/dist/',
+    publicPath: 'http://localhost:3030/dist/',
   },
 
   module: {

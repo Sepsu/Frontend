@@ -30,3 +30,9 @@ export function setColor(val) {
     color: val
   };
 }
+export function connectBubble(val) {
+  return {
+    type: 'CONNECT_BUBBLE',
+    value: val
+  };
+}

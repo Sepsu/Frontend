@@ -24,7 +24,8 @@ const common = {
 
   output: {
     path: PATHS.build,
-    filename: 'bundle.js',
+    publicPath: 'http://localhost:3030/',
+    filename: 'dist/bundle.js',
   },
 
   resolve: {

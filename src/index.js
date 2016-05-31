@@ -10,13 +10,17 @@ import env from "./config";
 import io from "socket.io-client"
 import {setState, setTemp} from 'actions/preferences';
 
-const socket = io(`${env.apiHost}:${env.apiPort}`);
+//const socket = io(`${env.apiHost}:${env.apiPort}`);
+const socket = io.connect(`${env.apiHost}:${env.apiPort}`);
+//const socket = io.connect(`http://192.168.1.34:${env.apiPort}`);
 const history = useRouterHistory(createHashHistory)({ queryKey: false });
 const store = configureStore(history, socket);
+export {socket};
 
 socket.on('connect', function() {
   console.log("socket.io connected");
   socket.emit('conn', { foo: 666 });
+
 });
 
 socket.on('state', (state) => {
