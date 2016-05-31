@@ -1,0 +1,21 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+import.height	/home/severi/software/Frontend/src/components/Dashboard/index.js	/^const style = {$/;"	property	line:20
+import.width	/home/severi/software/Frontend/src/components/Dashboard/index.js	/^  height: 150,$/;"	property	line:21
+import.margin	/home/severi/software/Frontend/src/components/Dashboard/index.js	/^  width: 150,$/;"	property	line:22
+import.textAlign	/home/severi/software/Frontend/src/components/Dashboard/index.js	/^  margin: '25',$/;"	property	line:23
+import.alignItems	/home/severi/software/Frontend/src/components/Dashboard/index.js	/^  textAlign: 'center',$/;"	property	line:24
+import.display	/home/severi/software/Frontend/src/components/Dashboard/index.js	/^  alignItems: 'middle',$/;"	property	line:25
+const.display	/home/severi/software/Frontend/src/components/Dashboard/index.js	/^const styletext = {$/;"	property	line:28
+const.verticalAlign	/home/severi/software/Frontend/src/components/Dashboard/index.js	/^    display: 'table-cell',$/;"	property	line:29
+const.display	/home/severi/software/Frontend/src/components/Dashboard/index.js	/^const styleValue = {$/;"	property	line:33
+const.fontSize	/home/severi/software/Frontend/src/components/Dashboard/index.js	/^  display: 'inline-block',$/;"	property	line:34
+const.bold	/home/severi/software/Frontend/src/components/Dashboard/index.js	/^  fontSize: 40,$/;"	property	line:35
+const.verticalAlign	/home/severi/software/Frontend/src/components/Dashboard/index.js	/^  bold: true,$/;"	property	line:36
+export.Component.free	/home/severi/software/Frontend/src/components/Dashboard/index.js	/^  static propTypes = {$/;"	property	line:44
+static.free	/home/severi/software/Frontend/src/components/Dashboard/index.js	/^  static defaultProps = {$/;"	property	line:51
+render	/home/severi/software/Frontend/src/components/Dashboard/index.js	/^  render() {$/;"	function	line:73
