@@ -13,7 +13,7 @@ import {setState, setTemp} from 'actions/preferences';
 //const socket = io(`${env.apiHost}:${env.apiPort}`);
 const socket = io.connect(`${env.apiHost}:${env.apiPort}`);
 //const socket = io.connect(`http://192.168.1.34:${env.apiPort}`);
-const history = useRouterHistory(createHashHistory)({ queryKey: false });
+const history = useRouterHistory(createHashHistory)();
 const store = configureStore(history, socket);
 export {socket};
 
