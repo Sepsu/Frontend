@@ -86,7 +86,7 @@ class Home extends Component {
         <Tab
         label="Environment"
         icon={<FontIcon className="material-icons">explore</FontIcon>}>
-          <GridListOwn/>
+          <GridListOwn data={this.props.env}/>
 
         </Tab>
         <Tab

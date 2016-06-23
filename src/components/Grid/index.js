@@ -20,42 +20,35 @@ const styles = {
   },
 };
 
-const tilesData = [
-  {
-    label: 'Temperature',
-    icon: 'home',
-    value: '12.3',
+const sensorIcons = [{
+   {
+    Temperature :'home'
   },
   {
-    label: 'Humidity',
-    icon: 'phone',
-    value: '12.3',
+    Humidity :'phone',
   },
   {
-    label: 'Pressure',
-    icon: 'home',
-    value: '12.3',
+    Pressure : 'home',
   },
   {
-    label: 'AirQuality',
-    icon: 'home',
-    value: '12.3',
-  },
-
-];
+    AirQuality : 'home',
+  }
+}]
 
 
-const GridListOwn = () => (
+
+const GridListOwn = (data) => (
+  console.log(data);
   <div style={styles.root}>
     <GridList
       cellHeight={200}
       style={styles.gridList}
     >
-      {tilesData.map(tile => (
+      {data.map(tile => (
         <GridTile
-          key={tile.label}
+          key={tile.name}
         >
-        <PaperExampleCircle icon={tile.icon} value={tile.value}>
+        <PaperExampleCircle icon={sensorIcons[tile.name]} value={tile.value}>
           </PaperExampleCircle>
         </GridTile>
       ))}
